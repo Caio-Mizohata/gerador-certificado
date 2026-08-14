@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { SecondaryButton } from '../../components/secondary-button/secondary-button';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-certificado',
@@ -7,4 +8,10 @@ import { SecondaryButton } from '../../components/secondary-button/secondary-but
   templateUrl: './certificado.html',
   styleUrl: './certificado.css',
 })
-export class Certificado {}
+export class Certificado {
+  private router = inject(Router)
+
+  voltarBotao() {
+    this.router.navigateByUrl("/")
+  }
+}
